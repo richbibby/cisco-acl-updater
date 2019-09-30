@@ -1,7 +1,6 @@
 #! /usr/bin/env python
 
-#An application to add update ACL's on Cisco routers
-#initially developed to update the SPOKE_EGRESS ACL applied to the Internet facing interface on HKA spoke routers
+#An application to update Access Control Lists (ACLs) on Cisco IOS routers
 
 from netmiko import ConnectHandler
 
