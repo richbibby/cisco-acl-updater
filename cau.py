@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 
-#An application to update Access Control Lists (ACLs) on Cisco IOS routers
+# An application to update Access Control Lists (ACLs) on Cisco IOS routers
 
 from netmiko import ConnectHandler
 
@@ -29,7 +29,7 @@ net_connect.disconnect()
 print(output)
 print()
 
-#with the ACL stored as "output" write the ACL to a file called acl.txt and file called new_acl.txt
+# with the ACL stored as "output" write the ACL to a file called acl.txt and file called new_acl.txt
 with open ("acl.txt", "w") as f:
     f.write(output)
 
@@ -37,7 +37,7 @@ with open ("new_acl.txt", "w") as f:
     f.write(output)
 
 
-#prompt the user for the details of the new port to open
+# prompt the user for the details of the new port to open
 protocol = input("What is the protocol ?")
 port_number = input("What is the port number? ")
 destination = input("what is the destination? ")
@@ -45,8 +45,8 @@ destination = input("what is the destination? ")
 
 ace = ' permit ' + protocol + ' any ' + destination + ' eq ' + port_number + '\n'
 
-#open the file new_acl.txt and read the contents into the "contents" variable, then insert the new ACE at line 1
-#write the file again with the joined contents
+# open the file new_acl.txt and read the contents into the "contents" variable, then insert the new ACE at line 1
+# write the file again with the joined contents
 
 with open("new_acl.txt", "r") as f:
     contents = f.readlines()
